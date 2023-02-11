@@ -14,6 +14,8 @@ export default function Navbar() {
 //   });
   const handleLogOut = async () => {
     await signOut(auth);
+    window.localStorage.removeItem('currentUser');
+
     history('/Authentication/Login')
   };
   function CustomLink({ to, children, ...props }) {

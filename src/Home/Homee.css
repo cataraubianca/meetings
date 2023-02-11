@@ -92,3 +92,21 @@
     max-width: fit-content;
     max-height: fit-content
 }
+.contentt{
+    background-color: #5b5d96;
+    border-radius: 310px;
+    backface-visibility: calc(00.5rem);
+}
+.titlee{
+    margin-top: 100px;
+    margin-left: 650px;
+}
+.titlee2{
+    text-align: center;
+    padding:30px
+}
+.recuser{
+    margin-left: 450px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}

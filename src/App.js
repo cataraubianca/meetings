@@ -104,20 +104,25 @@ import React from "react";
 import './Authentication/Authentication.css';
 import {Login} from "./Authentication/Login";
 import {Register} from "./Authentication/Signup";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Redirect } from "react-router-dom";
 import { Home } from "./Home/Homee";
 import { Meetings } from "./Meetings/Meetings";
+import { PrivateRoutes } from "./PrivateRoutes";
 function App () {
-
+  const [user,setUser]=useState(window.localStorage.getItem('currentUser'));
   return (
     <>
     <Router>
         <Routes>
+          
         <Route exact path="/" element={<Login/>}/>
         <Route exact path="/Authentication/Login" element={<Login/>}/>
         <Route exact path="/Authentication/Register" element={<Register/>}/>
-        <Route exact path="/Home/Homee" element={<Home/>}/>
-        <Route exact path="/Meetings/Meetings" element={<Meetings/>}/>
+
+        <Route element={<PrivateRoutes/>}>
+          <Route exact path="/Home/Homee" element={<Home/>}/>
+          <Route exact path="/Meetings/Meetings" element={<Meetings/>}/>
+        </Route>
 
         </Routes>
       </Router>

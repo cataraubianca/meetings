@@ -21,7 +21,14 @@ export const Meetings = () => {
         console.log(data);
     }
     const createMeeting = async () => {
+        
         await addDoc(meetingsCollectionRef, {cateogry: cateogry, date: date, description: description, imageURL: imageURL, name: name, place: place})
+        getMeetings();
+        setCategory();
+        setDescription();
+        setImageURL();
+        setName();
+        setPlace();
     }
     useEffect(() => {
         getMeetings();
@@ -29,28 +36,30 @@ export const Meetings = () => {
     return(
         <>
         <Navbar></Navbar>
-        <input placeholder="Category" 
+        <div className="auth-form-container-login">
+        <input className="input-login" placeholder="Category" 
         onChange={(event) => {setCategory(event.target.value)}}
         ></input>
         {/* <input placeholder="Date" 
         onChange={(event) => {setDate(event.target.value)}}
         ></input> */}
-        <input placeholder="Description"
+        <input className="input-login" placeholder="Description"
         onChange={(event) => {setDescription(event.target.value)}}
         
         ></input>
-        <input placeholder="ImageURL"
+        <input className="input-login" placeholder="ImageURL"
         onChange={(event) => {setImageURL(event.target.value)}}
         ></input>
-        <input placeholder="Name"
+        <input className="input-login" placeholder="Name"
         onChange={(event) => {setName(event.target.value)}}
         
         ></input>
-        <input placeholder="Place"
+        <input className="input-login" placeholder="Place"
         onChange={(event) => {setPlace(event.target.value)}}
         
         ></input>
-        <button onClick={createMeeting}>Create meetings</button>
+        <button onClick={createMeeting}>Create a new meeting</button>
+        </div>
         <div > {
                         meetings.map((product, i) => <Post {...product} key={i}/>) 
                         }</div>

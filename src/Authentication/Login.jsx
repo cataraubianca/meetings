@@ -29,6 +29,7 @@ export const Login = (props) => {
               email,
               pass
             );
+            window.localStorage.setItem('currentUser', email);
             console.log(user);
           } catch (error) {
             console.log(error.message);
