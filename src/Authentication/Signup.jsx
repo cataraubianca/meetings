@@ -46,11 +46,8 @@ export const Register = (props) => {
                 <div className="auth-form-container-register">
                     <form className="register-form" onSubmit={handleSubmit}>
 
-                        <h1 className="welcome-text">Join our team!</h1>
+                        <h1 className="welcome-text">Register here</h1>
                         
-                        { errorName && <div className="error">{errorName}</div> }
-                        <label htmlFor="firstname">Name:</label>
-                        <input className="input-register" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" id="firstname" name="name" />
                         
                         { errorEmail && <div className="error">{errorEmail}</div> }
                         <label htmlFor="email">Email:</label>
